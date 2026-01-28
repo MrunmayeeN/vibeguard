@@ -6,7 +6,7 @@ VibeGuard is a lightweight, developer-friendly security layer that protects your
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![PyPI version](https://badge.fury.io/py/vibeguard.svg)](https://badge.fury.io/py/vibeguard)
+[![PyPI version](https://img.shields.io/pypi/v/vibeguard.svg)](https://pypi.org/project/vibeguard/)
 
 ---
 

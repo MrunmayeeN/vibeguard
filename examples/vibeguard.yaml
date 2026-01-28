@@ -1,0 +1,58 @@
+# VibeGuard Configuration
+# Copy this file to vibeguard.yaml and customize as needed
+
+# Scanners to enable/disable
+scanners:
+  prompt_injection: true
+  pii: true
+  secrets: true
+  tokens: true
+  # toxicity: false  # Requires additional model
+
+# PII detection settings
+pii:
+  detect:
+    - email
+    - phone
+    - ssn
+    - credit_card
+    - ip_address
+  # Action: "warn", "block", or "redact"
+  action: redact
+
+# Secrets detection settings
+secrets:
+  patterns:
+    - openai_key
+    - anthropic_key
+    - aws_key
+    - github_token
+    - generic_api_key
+  # Action: "warn" or "block"
+  action: block
+
+# Token/cost limits
+limits:
+  max_input_tokens: 8000
+  max_output_tokens: 4000
+  daily_token_limit: 500000
+
+# Audit logging
+audit:
+  enabled: true
+  destination: ./logs/vibeguard.jsonl
+  # Whether to include actual prompt content in logs
+  # Set to false for privacy-sensitive environments
+  include_content: false
+
+# Custom rules (optional)
+rules:
+  - name: no_competitor_mentions
+    pattern: "(CompetitorA|CompetitorB|RivalCorp)"
+    action: warn
+    message: "Message mentions a competitor"
+  
+  - name: block_internal_urls
+    pattern: "https?://internal\\."
+    action: block
+    message: "Internal URLs should not be shared"

@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "vibeguard"
-version = "0.1.0"
+version = "0.1.1"
 description = "Open-source AI security layer for vibe coders and AI companies. Protect your LLM apps from prompt injection, PII leaks, secrets exposure, and more."
 readme = "README.md"
 license = "MIT"

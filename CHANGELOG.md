@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+## 0.1.1
+
+### Added
+- Introduced `mode` presets for Guard initialization:
+  - `standard` (default): detect only, no redaction
+  - `privacy`: auto-redact PII and secrets
+  - `strict`: block on prompt injection and secrets
+  - `monitor`: detect + sanitize without blocking
+- Prompt injection sanitization now preserves benign user intent in `sanitized_text`
+- New tests covering mode behavior and sanitization
+
+### Fixed
+- Clarified default behavior so `Guard()` does not redact unless explicitly configured
 
 ## [0.1.0] - 2025-01-27
 
